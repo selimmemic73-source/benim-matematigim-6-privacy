@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gizlilik Politikası — Benim Matematiğim 6. Sınıf</title>
+<meta name="description" content="Benim Matematiğim 6. Sınıf gizlilik politikası. Privacy policy for Benim Matematiğim 6. Sınıf.">
+<style>
+  :root{
+    --board:#24473a;
+    --board-deep:#1b382d;
+    --board-frame:#8b5a2b;
+    --chalk:#f5f1e6;
+    --chalk-dim:#cfe0d4;
+    --yellow:#ffd54f;
+    --orange:#e76f51;
+    --blue:#4aa3e8;
+    --grass:#7ab648;
+    --lilac:#9575cd;
+    --paper:#fdf6e3;
+    --ink:#2b2b2b;
+    --maxw:860px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:96px}
+  body{
+    font-family:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+    background:
+      radial-gradient(1200px 500px at 85% -10%, rgba(74,163,232,.10), transparent 60%),
+      radial-gradient(900px 420px at -10% 30%, rgba(122,182,72,.08), transparent 55%),
+      radial-gradient(700px 500px at 110% 75%, rgba(149,117,205,.08), transparent 55%),
+      linear-gradient(160deg, var(--board) 0%, var(--board-deep) 100%);
+    background-attachment:fixed;
+    color:var(--chalk);
+    line-height:1.75;
+    min-height:100vh;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+  }
+  ::-webkit-scrollbar{width:12px}
+  ::-webkit-scrollbar-track{background:var(--board-deep)}
+  ::-webkit-scrollbar-thumb{background:var(--grass);border-radius:6px;border:3px solid var(--board-deep)}
+  ::-webkit-scrollbar-thumb:hover{background:var(--yellow)}
+
+  header.top{
+    position:sticky;top:0;z-index:50;
+    background:rgba(27,56,45,.92);backdrop-filter:blur(8px);
+    border-bottom:3px solid var(--board-frame);
+    box-shadow:0 4px 18px rgba(0,0,0,.35);
+  }
+  .top-inner{
+    max-width:var(--maxw);margin:0 auto;padding:14px 20px;
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem;letter-spacing:.3px}
+  .logo .owl{font-size:1.5rem}
+  .logo small{display:block;font-weight:600;font-size:.72rem;color:var(--yellow);letter-spacing:1.5px;text-transform:uppercase}
+  .lang-toggle{margin-left:auto;display:flex;border:2px solid var(--chalk-dim);border-radius:999px;overflow:hidden}
+  .lang-toggle button{
+    font:inherit;font-weight:700;font-size:.85rem;letter-spacing:1px;
+    padding:7px 18px;border:0;cursor:pointer;background:transparent;color:var(--chalk-dim);
+    transition:background .2s,color .2s;
+  }
+  .lang-toggle button[aria-pressed="true"]{background:var(--yellow);color:var(--ink)}
+  .lang-toggle button:hover:not([aria-pressed="true"]){color:var(--chalk);background:rgba(245,241,230,.08)}
+
+  main{max-width:var(--maxw);margin:0 auto;padding:44px 20px 80px;position:relative}
+  .hero{text-align:center;margin-bottom:36px}
+  .hero h1{
+    font-size:clamp(1.9rem,5vw,2.9rem);font-weight:900;letter-spacing:.5px;
+    color:var(--chalk);text-shadow:0 2px 0 rgba(0,0,0,.25);
+  }
+  .hero h1 .underline{display:block;width:180px;height:5px;margin:12px auto 0;border-radius:3px;
+    background:linear-gradient(90deg,var(--yellow),var(--orange),var(--lilac),var(--blue))}
+  .hero .app{margin-top:14px;font-size:1.05rem;color:var(--chalk-dim)}
+  .hero .date{display:inline-block;margin-top:10px;font-size:.82rem;font-weight:700;letter-spacing:1px;
+    color:var(--yellow);border:1.5px dashed rgba(255,213,79,.55);border-radius:999px;padding:4px 16px}
+
+  .summary{
+    background:var(--paper);color:var(--ink);border-radius:14px;
+    padding:24px 26px;margin:0 0 34px;position:relative;
+    box-shadow:0 10px 26px rgba(0,0,0,.35);
+    border-left:8px solid var(--grass);
+    transform:rotate(-.4deg);
+  }
+  .summary h2{font-size:1.15rem;font-weight:900;margin-bottom:8px;color:#1b382d}
+  .summary p{font-size:.98rem;line-height:1.7}
+  .summary .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .summary .chip{font-size:.78rem;font-weight:800;letter-spacing:.4px;padding:5px 12px;border-radius:999px;color:#fff}
+  .chip.g{background:var(--grass)} .chip.b{background:var(--blue)} .chip.o{background:var(--orange)} .chip.l{background:var(--lilac)}
+
+  nav.sections{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
+  nav.sections a{
+    font-size:.8rem;font-weight:700;text-decoration:none;color:var(--chalk-dim);
+    border:1.5px solid rgba(207,224,212,.35);border-radius:999px;padding:5px 14px;
+    transition:all .2s;
+  }
+  nav.sections a:hover{color:var(--ink);background:var(--yellow);border-color:var(--yellow);transform:translateY(-1px)}
+
+  section.policy{margin-bottom:34px;scroll-margin-top:96px}
+  section.policy h2{
+    display:flex;align-items:center;gap:12px;
+    font-size:1.28rem;font-weight:900;color:var(--chalk);margin-bottom:12px;
+  }
+  section.policy h2 .num{
+    flex:0 0 auto;width:34px;height:34px;border-radius:50%;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:.95rem;font-weight:900;color:var(--ink);background:var(--yellow);
+    box-shadow:0 3px 0 rgba(0,0,0,.3);
+  }
+  section.policy:nth-of-type(3n) h2 .num{background:var(--blue);color:#fff}
+  section.policy:nth-of-type(3n+1) h2 .num{background:var(--grass);color:#fff}
+  section.policy .body{
+    border-left:3px dashed rgba(207,224,212,.3);padding-left:22px;margin-left:16px;
+    color:var(--chalk-dim);font-size:.97rem;
+  }
+  section.policy .body p{margin-bottom:10px}
+  section.policy .body ul{margin:6px 0 12px 20px}
+  section.policy .body li{margin-bottom:7px}
+  section.policy .body strong{color:var(--chalk)}
+  section.policy .body a{color:var(--yellow)}
+  .host-list{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px;list-style:none!important;margin-left:0!important}
+  .host-list li{
+    font-family:Consolas,Menlo,monospace;font-size:.8rem;background:rgba(0,0,0,.28);
+    border:1px solid rgba(207,224,212,.25);border-radius:8px;padding:3px 10px;margin:0!important;
+  }
+  .data-table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.88rem}
+  .data-table th,.data-table td{border:1.5px solid rgba(207,224,212,.35);padding:8px 10px;text-align:left;vertical-align:top}
+  .data-table th{background:rgba(0,0,0,.28);color:var(--chalk)}
+  .data-table td{color:var(--chalk-dim)}
+  .contact-mail{
+    display:inline-block;font-weight:800;color:var(--ink);background:var(--yellow);
+    border-radius:8px;padding:4px 14px;box-shadow:0 3px 0 rgba(0,0,0,.3);
+    text-decoration:none;transition:transform .15s, box-shadow .15s;
+  }
+  .contact-mail:hover{transform:translateY(-2px);box-shadow:0 5px 0 rgba(0,0,0,.3)}
+  footer{border-top:3px solid var(--board-frame);padding:26px 20px 40px;text-align:center;color:var(--chalk-dim);font-size:.85rem}
+  footer .crayons{font-size:1.2rem;letter-spacing:6px;margin-bottom:8px}
+  footer a{color:var(--yellow);text-decoration:none}
+
+  [hidden]{display:none!important}
+
+  @media (max-width:560px){
+    .top-inner{padding:12px 14px}
+    main{padding:30px 16px 60px}
+    section.policy .body{padding-left:14px;margin-left:8px}
+    .summary{padding:18px}
+    .data-table{font-size:.78rem}
+    .data-table th,.data-table td{padding:6px 7px}
+  }
+  @media print{
+    body{background:#fff;color:#000}
+    body::before,header.top,nav.sections{display:none}
+    .summary{box-shadow:none;transform:none;border:1px solid #999}
+    section.policy .body{color:#222;border-left-color:#999}
+    section.policy h2{color:#000}
+    section.policy .body strong{color:#000}
+    .hero h1{color:#000;text-shadow:none}
+    .hero .app,.hero .date{color:#333}
+    .data-table th,.data-table td{border-color:#999;color:#222}
+    .data-table th{background:#eee;color:#000}
+    footer{color:#333;border-top-color:#999}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="logo">
+      <span class="owl">🦉</span>
+      <span>Benim Matematiğim<small>6. Sınıf · Gizlilik</small></span>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Dil / Language">
+      <button id="btn-tr" aria-pressed="true" onclick="setLang('tr')">TR</button>
+      <button id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ================= TÜRKÇE ================= -->
+  <div id="lang-tr">
+    <div class="hero">
+      <h1>Gizlilik Politikası<span class="underline"></span></h1>
+      <p class="app">Benim Matematiğim 6. Sınıf · Android uygulaması · com.benimmatematigim.app6</p>
+      <span class="date">Yürürlük tarihi: 16 Kasım 2026</span>
+    </div>
+
+    <div class="summary">
+      <h2>📌 Kısaca</h2>
+      <p>Benim Matematiğim, çocukların güvenle kullanabilmesi için <strong>yerel-öncelikli</strong> tasarlanmıştır: öğrenme ilerlemesi yalnızca cihazda tutulur, hesap açılmaz, reklam gösterilmez ve kullanıcı izlenmez. İnternet yalnızca iki sınırlı iş için kullanılır: müfredat sayfalarının güncellik kontrolü (kişisel veri gönderilmez) ve Google Play satın alma doğrulaması. Bu sayfa, uygulamanın hangi veriyi neden işlediğini eksiksiz açıklar. Benim Matematiğim, MEB veya herhangi bir devlet kuruluşuyla bağlantılı değildir; resmî hizmet sunmaz.</p>
+      <div class="chips">
+        <span class="chip g">Hesap yok</span>
+        <span class="chip b">Reklam yok</span>
+        <span class="chip o">İzleme yok</span>
+        <span class="chip l">Veriler cihazda</span>
+      </div>
+    </div>
+
+    <nav class="sections" aria-label="Bölümler">
+      <a href="#tr-1">Cihazdaki veriler</a>
+      <a href="#tr-2">Toplamadıklarımız</a>
+      <a href="#tr-3">Mikrofon ve ses</a>
+      <a href="#tr-4">Satın almalar</a>
+      <a href="#tr-5">İnternet</a>
+      <a href="#tr-6">Çocuklar</a>
+      <a href="#tr-7">Silme</a>
+      <a href="#tr-8">Üçüncü taraflar</a>
+      <a href="#tr-9">Değişiklikler</a>
+      <a href="#tr-10">İletişim</a>
+    </nav>
+
+    <section class="policy" id="tr-1">
+      <h2><span class="num">1</span>Cihazda tutulan veriler</h2>
+      <div class="body">
+        <p>Uygulama aşağıdaki bilgileri <strong>yalnızca cihazın kendi depolamasında</strong> tutar; hiçbir sunucuya göndermez:</p>
+        <ul>
+          <li>Ders ve test ilerlemesi (kaldığın yer, doğru/yanlış yanıtlar, süreler)</li>
+          <li>Günlük hedef ve gün serisi (streak) sayaçları, çözülen sorular, karne ve tekrar önerileri, ödüller ve rozetler</li>
+          <li>Profilde seçilen takma ad (isteğe bağlı) ve uygulama ayarları (ör. sesli okuma tercihi)</li>
+          <li>Çözüm tahtası ses tercihi (sustur/aç) ve uygulama değerlendirme kaydı (yıldız + isteğe bağlı yorum)</li>
+          <li>Satın alma durumu (PRO aktif mi — Google Play'den doğrulanır, cihazda saklanır)</li>
+        </ul>
+        <table class="data-table">
+          <tr><th>Veri</th><th>Nerede saklanır</th><th>Cihaz dışına çıkar mı?</th></tr>
+          <tr><td>Takma ad (isteğe bağlı)</td><td>Cihaz, yerel ayarlar</td><td>Hayır</td></tr>
+          <tr><td>Günlük hedef, gün serisi, çözülen sorular, karne ve tekrar önerileri</td><td>Cihaz, yerel veritabanı</td><td>Hayır</td></tr>
+          <tr><td>Sesle arama için mikrofon sesi</td><td>Saklanmaz; anlık işlenir</td><td>Cihazın konuşma tanıma hizmetine iletilir (3. bölüm)</td></tr>
+          <tr><td>Sesli ders anlatımı metni</td><td>Saklanmaz</td><td>Cihazın metinden-okuma motoruna verilir (3. bölüm)</td></tr>
+          <tr><td>Satın alma (PRO)</td><td>Google Play tarafında</td><td>Ödemeyi Google işler; uygulama kart bilgisi görmez (4. bölüm)</td></tr>
+          <tr><td>Müfredat güncellik kontrolü isteği</td><td>Saklanmaz</td><td>Yalnızca herkese açık MEB adreslerine HTTPS isteği; kişisel veri içermez (5. bölüm)</td></tr>
+        </table>
+        <p>İlerleme verileri (cevap geçmişi, seri, rozetler, günlük sayaçlar, YZ öğrenme kaydı) uygulamayı kaldırınca veya uygulama içindeki "İlerlemeyi sıfırla" akışıyla silinir. <strong>Takma ad, günlük hedef, ses tercihi ve değerlendirme kaydı sıfırlamadan etkilenmez</strong>; yalnız uygulamayı kaldırınca silinir. Geliştiricinin bu verilere uzaktan erişimi yoktur.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="tr-2">
+      <h2><span class="num">2</span>Toplamadığımız veriler</h2>
+      <div class="body">
+        <p>Uygulama şunları <strong>istemez, toplamaz ve işlemez</strong>: ad-soyad, e-posta adresi, telefon numarası, konum, rehber, kamera görüntüsü, fotoğraf/dosya, cihaz kimliği, cihaz reklam kimliği, çökme raporu. Uygulamada <strong>reklam SDK'sı, analitik SDK'sı veya izleme/aracı takip kodu yoktur</strong>; sosyal medya eklentisi, WebView veya harici bağlantı açıcı bulunmaz. Sunucularımızda kullanıcı hesabı veya kullanıcı verisi bulunmaz.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="tr-3">
+      <h2><span class="num">3</span>Mikrofon ve sesli özellikler</h2>
+      <div class="body">
+        <p><strong>Sesle arama (isteğe bağlı):</strong> Konu ekranındaki sesle arama özelliği yalnızca siz mikrofon düğmesine dokunursanız ve Android mikrofon iznini verirseniz çalışır. Ses, <strong>cihazın konuşma tanıma hizmeti</strong> (Android RecognitionService) tarafından metne çevrilir; bu hizmet cihaz üreticinizin veya Google'ın sağladığı tanıma motoru olabilir ve sesi kendi gizlilik politikası kapsamında, cihazda veya kendi sunucularında işleyebilir. <strong>Uygulamanın kendisi ses kaydını diske yazmaz, saklamaz ve geliştiriciye göndermez</strong>; tanıma sonucu yalnızca arama kutusuna yazılır. İzin verilmezse sesle arama çalışmaz; uygulamanın geri kalanı normal çalışır. Mikrofon iznini Android ayarlarından istediğiniz zaman geri alabilirsiniz; özellik kapalıyken mikrofon hiç kullanılmaz.</p>
+        <p><strong>Sesli okuma:</strong> Ders ve soru metinlerinin seslendirilmesi cihazın kendi metin-okuma (TTS) motoruyla yapılır. Okunan metin ders içeriğidir; kişisel veri içermez. Bazı TTS motorları sesi cihazda üretir, bazıları motor sağlayıcısının hizmetiyle üretebilir; bu durumda motor sağlayıcısının kendi gizlilik politikası geçerlidir. Anlatım sesi uygulama içinde kapatılabilir (sessiz mod).</p>
+      </div>
+    </section>
+
+    <section class="policy" id="tr-4">
+      <h2><span class="num">4</span>Satın almalar (PRO)</h2>
+      <div class="body">
+        <p>PRO üyelik satın almaları tamamen <strong>Google Play Billing</strong> üzerinden yürür. Ödeme bilgileri (kart vb.) Google tarafından işlenir; geliştirici bu bilgilere hiçbir zaman erişemez, uygulama kart numarası veya ödeme kimliği görmez ve saklamaz. Uygulama yalnızca satın alma doğrulaması için Google Play ile iletişim kurar ve üyelik durumunu cihazda tutar. Satın alma geçmişi ve iade işlemleri Google Play hesabınız üzerinden yönetilir. Çocukların satın alma işlemleri Google Play'in ebeveyn onayı akışına tabidir.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="tr-5">
+      <h2><span class="num">5</span>İnternet kullanımı</h2>
+      <div class="body">
+        <p>Uygulama çevrimdışı çalışacak şekilde tasarlanmıştır; soru ve ders içerikleri cihazla birlikte gelir. İnternet izni yalnızca iki amaçla kullanılır:</p>
+        <ul>
+          <li><strong>Müfredat güncelleme kontrolü:</strong> Uygulama açılışında ve yaklaşık 24 saatte bir, aşağıdaki resmî MEB sayfalarına içerik değişikliği olup olmadığına bakılır. Bu isteklerde <strong>hiçbir kişisel veri veya cihaz tanımlayıcısı gönderilmez</strong> (cihaz kimliği, konum, takma ad, ilerleme bilgisi bulunmaz); yalnızca sayfa içeriği okunur. Tespit edilen değişiklikler <strong>insan incelemesinden geçmeden</strong> uygulamaya yansımaz.</li>
+          <li><strong>Google Play Billing:</strong> Satın alma ve üyelik doğrulaması.</li>
+        </ul>
+        <ul class="host-list">
+          <li>tymm.meb.gov.tr</li>
+          <li>mufredat.meb.gov.tr</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="policy" id="tr-6">
+      <h2><span class="num">6</span>Çocukların gizliliği</h2>
+      <div class="body">
+        <p>Uygulama 6. sınıf öğrencileri (yaklaşık 11–12 yaş) için tasarlanmıştır ve çocuklara yönelik Google Play Aileler (Families) politikalarına uygun çalışır: reklam yoktur, kişisel veri toplanmaz, davranışsal hedefleme yoktur; uygulama içi satın almalar Google Play'in ebeveyn onayı mekanizmalarına tabidir. Ebeveynler çocuklarının cihazındaki ilerlemeyi profil ekranından görebilir ve sıfırlayabilir.</p>
+        <p>Çocuğunuzla ilgili bir gizlilik sorunuz veya şikâyetiniz varsa <a href="#tr-10">iletişim bölümünden</a> bize ulaşın; ilgili bir veri tespit edilirse derhal silinir, talepler <strong>30 gün içinde</strong> yanıtlanır. KVKK m.11 ve benzeri mevzuat kapsamındaki haklarınız (bilgi alma, silme, itiraz) yerel veriler için uygulama içinden, diğer talepler için e-posta ile kullanılır.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="tr-7">
+      <h2><span class="num">7</span>Saklama ve silme</h2>
+      <div class="body">
+        <p>Tüm öğrenme verileri cihazda tutulduğundan silme doğrudan sizin kontrolünüzdedir:</p>
+        <ul>
+          <li><strong>"İlerlemeyi sıfırla":</strong> ders/test ilerlemesini ve ilgili kayıtları cihazdan siler (çift onay + ebeveyn kapısı ile). Takma ad, günlük hedef, ses tercihi ve değerlendirme kaydı korunur.</li>
+          <li><strong>Uygulamayı kaldırma:</strong> cihazdaki tüm uygulama verilerini (yerel veritabanı ve ayarlar) siler.</li>
+        </ul>
+        <p>Sunucularımızda kullanıcı verisi kopyası bulunmadığından sunucu tarafı silme talebi gerekmez; yine de iletişim adresine yazabilirsiniz. Google Play satın alma kayıtları Google'ın kendi saklama politikasına tabidir.</p>
+        <p><strong>Android otomatik yedekleme:</strong> Cihazınızın Android otomatik yedekleme özelliği açıksa, yerel veriler cihazınızın kendi yedekleme hizmetine (ör. Google Drive) dahil olabilir. Bu tamamen işletim sisteminin ve sizin yedekleme ayarınızın kontrolündedir; geliştirici bu yedeklere erişemez. Yedeklemeyi cihaz ayarlarından kapatabilirsiniz.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="tr-8">
+      <h2><span class="num">8</span>Üçüncü taraf servisler</h2>
+      <div class="body">
+        <ul>
+          <li><strong>Google Play Billing</strong> — ödeme ve abonelik doğrulaması (<a href="https://policies.google.com/privacy" rel="noopener">Google Gizlilik Politikası</a>).</li>
+          <li><strong>Cihazın konuşma tanıma servisi</strong> — yalnızca sesle arama kullanılırsa ve izin verilirse; Android'in kendi servisidir.</li>
+          <li><strong>Cihazın TTS motoru</strong> — sesli okuma için; motor sağlayıcısının koşulları geçerli olabilir (3. bölüm).</li>
+          <li><strong>MEB resmî sayfaları</strong> — yalnızca herkese açık müfredat içeriğinin okunması; veri gönderilmez.</li>
+        </ul>
+        <p>Bunların dışında hiçbir üçüncü tarafa veri aktarılmaz.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="tr-9">
+      <h2><span class="num">9</span>Politikadaki değişiklikler</h2>
+      <div class="body">
+        <p>Bu politika güncellenirse yeni sürüm bu sayfada yayınlanır ve yürürlük tarihi değiştirilir; mağaza sayfasındaki bağlantı aynı adreste kalır. Önemli değişiklikler uygulama güncelleme notlarında ve uygulama içi duyuruyla belirtilir.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="tr-10">
+      <h2><span class="num">10</span>İletişim</h2>
+      <div class="body">
+        <p>Gizlilikle ilgili soru ve talepleriniz için (30 gün içinde yanıtlanır):</p>
+        <p><a class="contact-mail" href="mailto:selimmemic73@gmail.com">✉️ selimmemic73@gmail.com</a></p>
+        <p>Geliştirici: Benim Matematiğim 6. Sınıf · Bağımsız geliştirici</p>
+        <p>Benim Matematiğim, MEB veya herhangi bir devlet kuruluşuyla bağlantılı değildir; resmî hizmet sunmaz. Konular MEB müfredatıyla uyumludur; sorular uygulama içinde özgün olarak üretilir ve resmî kaynak yerine geçmez.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= ENGLISH ================= -->
+  <div id="lang-en" hidden>
+    <div class="hero">
+      <h1>Privacy Policy<span class="underline"></span></h1>
+      <p class="app">Benim Matematiğim 6. Sınıf · Android app · com.benimmatematigim.app6</p>
+      <span class="date">Effective date: November 16, 2026</span>
+    </div>
+
+    <div class="summary">
+      <h2>📌 In short</h2>
+      <p>Benim Matematiğim is designed <strong>local-first</strong> so children can use it safely: learning progress stays on the device, no account is created, no ads are shown, and users are not tracked. The internet is used for only two limited jobs: checking the curriculum pages for updates (no personal data is sent) and Google Play purchase verification. This page fully explains what data the app processes and why. Benim Matematiğim is not affiliated with MEB or any government body and does not provide official services.</p>
+      <div class="chips">
+        <span class="chip g">No account</span>
+        <span class="chip b">No ads</span>
+        <span class="chip o">No tracking</span>
+        <span class="chip l">Data stays on device</span>
+      </div>
+    </div>
+
+    <nav class="sections" aria-label="Sections">
+      <a href="#en-1">On-device data</a>
+      <a href="#en-2">What we don't collect</a>
+      <a href="#en-3">Microphone &amp; voice</a>
+      <a href="#en-4">Purchases</a>
+      <a href="#en-5">Internet</a>
+      <a href="#en-6">Children</a>
+      <a href="#en-7">Deletion</a>
+      <a href="#en-8">Third parties</a>
+      <a href="#en-9">Changes</a>
+      <a href="#en-10">Contact</a>
+    </nav>
+
+    <section class="policy" id="en-1">
+      <h2><span class="num">1</span>Data stored on the device</h2>
+      <div class="body">
+        <p>The app keeps the following <strong>only in the device's own storage</strong> and never sends it to any server:</p>
+        <ul>
+          <li>Lesson and quiz progress (where you left off, correct/incorrect answers, timings)</li>
+          <li>Daily goal and streak counters, solved questions, report card and revision suggestions, rewards and badges</li>
+          <li>The nickname chosen in the profile (optional) and app settings (e.g. read-aloud preference)</li>
+          <li>The solution-board sound preference (mute/on) and the in-app rating record (stars + optional comment)</li>
+          <li>Purchase status (whether PRO is active — verified via Google Play, stored on the device)</li>
+        </ul>
+        <table class="data-table">
+          <tr><th>Data</th><th>Where it is stored</th><th>Does it leave the device?</th></tr>
+          <tr><td>Nickname (optional)</td><td>Device, local settings</td><td>No</td></tr>
+          <tr><td>Daily goal, streak, solved questions, report card and revision suggestions</td><td>Device, local database</td><td>No</td></tr>
+          <tr><td>Microphone audio for voice search</td><td>Not stored; processed instantly</td><td>Passed to the device's speech recognition service (section 3)</td></tr>
+          <tr><td>Read-aloud lesson text</td><td>Not stored</td><td>Given to the device's text-to-speech engine (section 3)</td></tr>
+          <tr><td>Purchase (PRO)</td><td>On Google Play's side</td><td>Google processes the payment; the app never sees card details (section 4)</td></tr>
+          <tr><td>Curriculum update-check request</td><td>Not stored</td><td>HTTPS request to public MEB addresses only; contains no personal data (section 5)</td></tr>
+        </table>
+        <p>Progress data (answer history, streak, badges, daily counters, AI learning record) is deleted when the app is uninstalled or via the in-app "Reset progress" flow. <strong>The nickname, daily goal, sound preference and rating record are not affected by reset</strong>; they are deleted only when the app is uninstalled. The developer has no remote access to this data.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="en-2">
+      <h2><span class="num">2</span>Data we do not collect</h2>
+      <div class="body">
+        <p>The app <strong>does not request, collect, or process</strong>: real name, email address, phone number, location, contacts, camera images, photos/files, device ID, the device advertising ID, or crash reports. The app contains <strong>no ad SDK, no analytics SDK, and no tracking code</strong>; there are no social-media plugins, WebView or external link openers. No user accounts or user data exist on our servers.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="en-3">
+      <h2><span class="num">3</span>Microphone and voice features</h2>
+      <div class="body">
+        <p><strong>Voice search (optional):</strong> The voice-search feature on the topic screen works only if you tap the microphone button and grant Android's microphone permission. Audio is converted to text by the <strong>device's speech recognition service</strong> (Android RecognitionService); this service may be the recognition engine provided by your device manufacturer or by Google, and it may process the audio under its own privacy policy, on the device or on its own servers. <strong>The app itself does not write audio to disk, store it, or send it to the developer</strong>; the recognition result is only written into the search box. If permission is denied, voice search simply does not work; the rest of the app works normally. You can revoke the microphone permission at any time in Android settings; while the feature is off, the microphone is never used.</p>
+        <p><strong>Read-aloud:</strong> Lesson and question texts are spoken by the device's own text-to-speech (TTS) engine. The spoken text is lesson content and contains no personal data. Some TTS engines generate audio on the device; others may use the engine provider's service, in which case the provider's own privacy policy applies. Narration can be switched off inside the app (silent mode).</p>
+      </div>
+    </section>
+
+    <section class="policy" id="en-4">
+      <h2><span class="num">4</span>Purchases (PRO)</h2>
+      <div class="body">
+        <p>PRO membership purchases are handled entirely by <strong>Google Play Billing</strong>. Payment details (card etc.) are processed by Google; the developer can never access them, and the app never sees or stores card numbers or payment identifiers. The app communicates with Google Play only to verify purchases and keeps the membership status on the device. Purchase history and refunds are managed through your Google Play account. Children's purchases are subject to Google Play's parental approval flow.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="en-5">
+      <h2><span class="num">5</span>Internet usage</h2>
+      <div class="body">
+        <p>The app is designed to work offline; lessons and questions ship with the app. The internet permission is used for only two purposes:</p>
+        <ul>
+          <li><strong>Curriculum update check:</strong> At app launch and roughly every 24 hours, the official MEB pages below are checked for content changes. These requests carry <strong>no personal data or device identifiers</strong> (no device ID, location, nickname or progress information); only page content is read. Detected changes <strong>never reach the app without human review</strong>.</li>
+          <li><strong>Google Play Billing:</strong> purchase and membership verification.</li>
+        </ul>
+        <ul class="host-list">
+          <li>tymm.meb.gov.tr</li>
+          <li>mufredat.meb.gov.tr</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="policy" id="en-6">
+      <h2><span class="num">6</span>Children's privacy</h2>
+      <div class="body">
+        <p>The app is designed for 6th-grade students (about 11–12 years old) and operates in line with Google Play's Families policies for child-directed apps: no ads, no personal data collection, no behavioural targeting; in-app purchases are subject to Google Play's parental approval mechanisms. Parents can view and reset the progress on their child's device from the profile screen.</p>
+        <p>If you have a privacy question or complaint regarding your child, <a href="#en-10">contact us</a>; any related data found will be deleted immediately and requests are answered <strong>within 30 days</strong>. Your rights under KVKK Art. 11 and similar legislation (information, deletion, objection) are exercised in-app for local data and by email for other requests.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="en-7">
+      <h2><span class="num">7</span>Retention and deletion</h2>
+      <div class="body">
+        <p>Because all learning data lives on the device, deletion is directly in your control:</p>
+        <ul>
+          <li><strong>"Reset progress":</strong> deletes lesson/quiz progress and related records from the device (double confirmation + parent gate). The nickname, daily goal, sound preference and rating record are kept.</li>
+          <li><strong>Uninstalling the app:</strong> deletes all app data (local database and settings) from the device.</li>
+        </ul>
+        <p>No copies of user data exist on our servers, so no server-side deletion request is needed; you may still write to the contact address. Google Play purchase records are subject to Google's own retention policy.</p>
+        <p><strong>Android auto-backup:</strong> If your device's Android auto-backup feature is enabled, local data may be included in your device's own backup service (e.g. Google Drive). This is entirely under the control of the operating system and your backup settings; the developer cannot access those backups. You can turn backup off in the device settings.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="en-8">
+      <h2><span class="num">8</span>Third-party services</h2>
+      <div class="body">
+        <ul>
+          <li><strong>Google Play Billing</strong> — payment and subscription verification (<a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>).</li>
+          <li><strong>The device's speech recognition service</strong> — only if voice search is used and permission is granted; this is Android's own service.</li>
+          <li><strong>The device's TTS engine</strong> — for read-aloud; the engine provider's terms may apply (section 3).</li>
+          <li><strong>Official MEB pages</strong> — reading publicly available curriculum content only; no data is sent.</li>
+        </ul>
+        <p>No data is shared with any other third party.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="en-9">
+      <h2><span class="num">9</span>Changes to this policy</h2>
+      <div class="body">
+        <p>If this policy is updated, the new version will be published on this page and the effective date will be changed; the store listing link stays at the same address. Significant changes will also be noted in the app's release notes and via an in-app announcement.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="en-10">
+      <h2><span class="num">10</span>Contact</h2>
+      <div class="body">
+        <p>For privacy questions and requests (answered within 30 days):</p>
+        <p><a class="contact-mail" href="mailto:selimmemic73@gmail.com">✉️ selimmemic73@gmail.com</a></p>
+        <p>Developer: Benim Matematiğim 6. Sınıf · Independent developer</p>
+        <p>Benim Matematiğim is not affiliated with MEB or any government body and does not provide official services. Topics align with the MEB curriculum; questions are produced originally inside the app and do not replace official sources.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="crayons">🖍️ 📐 ✏️ 📏 🖍️</div>
+  <span id="footer-tr">Benim Matematiğim 6. Sınıf — Küçük adımlar, büyük başarılara götürür. · <a href="./kullanim-kosullari.html">Kullanım Koşulları</a></span>
+  <span id="footer-en" hidden>Benim Matematiğim 6. Sınıf — Small steps lead to great achievements. · <a href="./kullanim-kosullari.html">Terms of Service</a></span>
+</footer>
+
+<script>
+  function setLang(lang){
+    var tr = lang === 'tr';
+    document.getElementById('lang-tr').hidden = !tr;
+    document.getElementById('lang-en').hidden = tr;
+    document.getElementById('footer-tr').hidden = !tr;
+    document.getElementById('footer-en').hidden = tr;
+    document.getElementById('btn-tr').setAttribute('aria-pressed', String(tr));
+    document.getElementById('btn-en').setAttribute('aria-pressed', String(!tr));
+    document.documentElement.lang = lang;
+    document.title = tr
+      ? 'Gizlilik Politikası — Benim Matematiğim 6. Sınıf'
+      : 'Privacy Policy — Benim Matematiğim 6. Sınıf';
+    try { localStorage.setItem('pp-lang', lang); } catch(e){}
+  }
+  try {
+    var saved = localStorage.getItem('pp-lang');
+    if (saved === 'en') setLang('en');
+  } catch(e){}
+</script>
+</body>
+</html>
